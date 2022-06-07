@@ -18,8 +18,11 @@ export default createGlobalStyle`
     }
 
     body{
-        background-color: var(--vanilla);
-        color: var(--black);
+    }
+
+    #root{
+        width: 100%;
+        height: 100%;
     }
 
     body, input, button{
