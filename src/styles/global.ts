@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
     *{
@@ -15,6 +15,8 @@ export default createGlobalStyle`
         --black: #0c0d0d;
         --dark-blue:  #4682B4;
         --light-blue: #B0C4DE;
+        --yellow: #FFDB58;
+        --dark-yellow: #DBAC00;
     }
 
     body{
@@ -37,5 +39,6 @@ export default createGlobalStyle`
 
     button{
         cursor: pointer;
+        border-style: none;
     }
-`
+`;
