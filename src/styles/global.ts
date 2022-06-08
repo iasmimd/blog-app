@@ -20,6 +20,8 @@ export default createGlobalStyle`
     }
 
     body{
+        width: 100%;
+        height: 100%;
     }
 
     #root{
@@ -31,6 +33,13 @@ export default createGlobalStyle`
         font-family: 'PT Serif', serif;
         font-size: 1rem;
     }
+
+    textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    } 
+
 
     h1 , h2 , h3 , h4{
         font-family: 'Roboto', sans-serif;
