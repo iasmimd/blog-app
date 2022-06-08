@@ -5,7 +5,6 @@ import Button from '../../components/Button';
 import Input from '../../components/Input';
 import { Container } from './style';
 import api from '../../services/api';
-
 interface RegisterUser {
   username: string;
   email: string;

@@ -17,12 +17,12 @@ interface Post {
   owner: Owner;
 }
 
-interface PostProviderData {
+interface PostContextData {
   posts: Post[];
   getAllPosts: () => Promise<void>;
 }
 
-const PostContext = createContext<PostProviderData>({} as PostProviderData);
+const PostContext = createContext<PostContextData>({} as PostContextData);
 
 const PostProvider = ({ children }: PostProviderProps) => {
   const [posts, setPosts] = useState<Post[]>([]);

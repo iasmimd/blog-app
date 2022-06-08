@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { LoginProvider } from './Login';
 import { PostProvider } from './Posts';
 
 interface AppProvider {
@@ -6,7 +7,11 @@ interface AppProvider {
 }
 
 const Provider = ({ children }: AppProvider) => {
-  return <PostProvider>{children}</PostProvider>;
+  return (
+    <LoginProvider>
+      <PostProvider>{children}</PostProvider>
+    </LoginProvider>
+  );
 };
 
 export default Provider;
