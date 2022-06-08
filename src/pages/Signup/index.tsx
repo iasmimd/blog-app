@@ -39,8 +39,8 @@ const Signup = () => {
 
   return (
     <Container>
-      <section>
         <form onSubmit={handleSubmit(onSubmit)}>
+          <div>
           <Input
             label='Nome de usuário'
             name='username'
@@ -65,10 +65,10 @@ const Signup = () => {
             register={register}
             errors={errors.avatarUrl?.message}
           />
+          </div>
           <Button type='submit'>Cadastrar</Button>
           <p>Já possui uma conta? Faça login.</p>
         </form>
-      </section>
     </Container>
   );
 };

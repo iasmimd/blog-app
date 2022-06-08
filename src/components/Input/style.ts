@@ -18,7 +18,7 @@ export const Container = styled.div<ContainerProps>`
 
   input {
     width: 100%;
-    height: 30px;
+    height: 35px;
     padding-left: 15px;
     border-radius: 15px;
     border: 1px solid var(--light-blue);
