@@ -31,7 +31,7 @@ const PostProvider = ({ children }: PostProviderProps) => {
     const { data } = await api.get('/post?page=1', {
       headers: {
         Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5ZTQ0NTU4LWY0ZGQtNGQxMC05M2NhLWY5MjIyYzMyYmM5ZCIsImlhdCI6MTY1NDY0NTcwMSwiZXhwIjoxNjU0NzMyMTAxfQ.Fw3vbqcA_AsvELdySrdAbjvbKWMPN0BubeN3hF3O89w',
+          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5ZTQ0NTU4LWY0ZGQtNGQxMC05M2NhLWY5MjIyYzMyYmM5ZCIsImlhdCI6MTY1NDY1MzY2MywiZXhwIjoxNjU0NzQwMDYzfQ.bPjiLWNRipfKUbiq_cLIi---mrXLWywMIrGaMkDo57I',
       },
     });
 
