@@ -5,10 +5,10 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode;
 }
 
-const Button = ({ children }: Props) => {
+const Button = ({ children, ...rest }: Props) => {
   return (
     <>
-      <Container>{children}</Container>
+      <Container {...rest}>{children}</Container>
     </>
   );
 };
