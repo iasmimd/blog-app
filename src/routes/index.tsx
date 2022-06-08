@@ -1,9 +1,12 @@
 import { Route, Switch, Redirect } from 'react-router-dom';
+import Dashboard from '../pages/Dashboard';
 
 const Routes = () => {
   return (
     <Switch>
-      <Route></Route>
+      <Route exact path = '/'>
+        <Dashboard/>
+      </Route>
     </Switch>
   );
 };

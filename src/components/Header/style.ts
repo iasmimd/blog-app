@@ -8,9 +8,16 @@ export const Container = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 60px;
 
     button{
         width: 60px;
         height: 30px;
+    }
+
+    img{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
     }
 `
