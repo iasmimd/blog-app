@@ -7,7 +7,6 @@ import { FaEdit } from 'react-icons/fa';
 
 const Dashboard = () => {
   const { posts, getAllPosts } = usePost();
-  //   console.log(posts)
 
   useEffect(() => {
     getAllPosts();
@@ -22,7 +21,7 @@ const Dashboard = () => {
             <li key={id}>
               <section>
                 <UserContent>
-                  <img src={owner.avatarUrl} />
+                  <img src={owner.avatarUrl} alt='profile photo'/>
                   <h3>{owner.username}</h3>
                 </UserContent>
                   <PostSettings>

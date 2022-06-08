@@ -6,8 +6,11 @@ import Signup from '../pages/Signup';
 const Routes = () => {
   return (
     <Switch>
-      <Route exact path = '/'>
-        <Login/>
+      <Route exact path='/'>
+        <Login />
+      </Route>
+      <Route path='/dashboard'>
+        <Dashboard />
       </Route>
     </Switch>
   );

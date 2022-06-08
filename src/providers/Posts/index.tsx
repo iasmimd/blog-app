@@ -1,5 +1,7 @@
+import { toNamespacedPath } from 'node:path/win32';
 import { createContext, ReactNode, useContext, useState } from 'react';
 import api from '../../services/api';
+import toast from 'react-hot-toast'
 
 interface PostProviderProps {
   children: ReactNode;
@@ -35,6 +37,7 @@ const PostProvider = ({ children }: PostProviderProps) => {
       },
     });
 
+    toast.success('cadastro efetuado')
     setPosts(data.data);
   };
 

@@ -1,10 +1,11 @@
 import CreateGlobalStyle from './styles/global';
-import Header from './components/Header';
+import  { Toaster } from 'react-hot-toast';
 import Routes from './routes';
 
 const App = () => {
   return (
     <>
+        <Toaster position='top-center' reverseOrder={false} toastOptions={{ style: { fontFamily: "Inter" } }} />
       <CreateGlobalStyle />
       <Routes />
     </>

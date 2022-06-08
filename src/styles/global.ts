@@ -46,7 +46,7 @@ export default createGlobalStyle`
         font-weight: 700;
     }
 
-    button{
+    button, svg{
         cursor: pointer;
         border-style: none;
     }

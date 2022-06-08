@@ -1,5 +1,7 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import api from '../../services/api';
+import toast from 'react-hot-toast'
 
 interface LoginProviderProps {
   children: ReactNode;
@@ -21,13 +23,15 @@ interface LoginContextData {
 }
 
 const initialValue = {
-    token: '',
-    userId: ''
-}
+  token: '',
+  userId: '',
+};
 
 const LoginContext = createContext<LoginContextData>({} as LoginContextData);
 
 const LoginProvider = ({ children }: LoginProviderProps) => {
+  const history = useHistory<unknown>();
+
   const [userData, setUserData] = useState<UserData>(initialValue);
 
   const login = async (userLogin: UserLogin) => {
@@ -36,6 +40,9 @@ const LoginProvider = ({ children }: LoginProviderProps) => {
       .then((res) => {
         console.log(res);
         setUserData(res.data);
+        localStorage.setItem('@blog:token', JSON.stringify(res.data));
+        history.push('/dashboard');
+        toast.success('bem-vindo user')
       })
       .catch((err) => console.log(err));
   };
