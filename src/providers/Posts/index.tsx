@@ -1,7 +1,7 @@
 import { toNamespacedPath } from 'node:path/win32';
-import { createContext, ReactNode, useContext, useState } from 'react';
+import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 import api from '../../services/api';
-import toast from 'react-hot-toast'
+import toast from 'react-hot-toast';
 
 interface PostProviderProps {
   children: ReactNode;
@@ -24,22 +24,27 @@ interface PostContextData {
   getAllPosts: () => Promise<void>;
 }
 
+const info = JSON.parse(localStorage.getItem('@blog:token') || '{}');
+
 const PostContext = createContext<PostContextData>({} as PostContextData);
 
 const PostProvider = ({ children }: PostProviderProps) => {
   const [posts, setPosts] = useState<Post[]>([]);
 
+  
   const getAllPosts = async () => {
     const { data } = await api.get('/post?page=1', {
       headers: {
-        Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5ZTQ0NTU4LWY0ZGQtNGQxMC05M2NhLWY5MjIyYzMyYmM5ZCIsImlhdCI6MTY1NDY1MzY2MywiZXhwIjoxNjU0NzQwMDYzfQ.bPjiLWNRipfKUbiq_cLIi---mrXLWywMIrGaMkDo57I',
+        Authorization: `Bearer ${info.token}`,
       },
     });
-
-    toast.success('cadastro efetuado')
+    
     setPosts(data.data);
   };
+
+  const updatePost = async () => {};
+
+  const deletePost = async () => {};
 
   return (
     <PostContext.Provider value={{ posts, getAllPosts }}>

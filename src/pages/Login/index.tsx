@@ -1,11 +1,13 @@
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { Link, Redirect, useHistory } from "react-router-dom";
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import { Container } from './style';
-import api from '../../services/api';
-import { useLogin } from '../../providers/Login';
+import { useUser } from '../../providers/User';
+import {RiLockPasswordFill} from 'react-icons/ri'
+import {HiOutlineMail} from 'react-icons/hi'
 
 interface RegisterUser {
   email: string;
@@ -24,7 +26,7 @@ const Login = () => {
     formState: { errors },
   } = useForm<RegisterUser>({ resolver: yupResolver(schema) });
 
-  const { userData, login } = useLogin();
+  const {  login } = useUser();
 
   return (
     <Container>
@@ -34,17 +36,19 @@ const Login = () => {
             label='Email'
             name='email'
             register={register}
-            errors={errors.email?.message}
+            icon={HiOutlineMail}
+            error={errors.email?.message}
           />
           <Input
             label='Senha'
             name='password'
             register={register}
-            errors={errors.password?.message}
+            icon={RiLockPasswordFill}
+            error={errors.password?.message}
           />
         </div>
         <Button type='submit'>Logar</Button>
-        <p>Já possui uma conta? Faça login.</p>
+        <p>Ainda não possui uma conta? <Link to='/'>Cadastre-se</Link></p>
       </form>
     </Container>
   );

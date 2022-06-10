@@ -25,7 +25,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 110px;
+    height: 125px;
   }
 
   button {
@@ -35,6 +35,7 @@ export const Container = styled.div`
   }
 
   p{
+    width: 80%;
     align-self: center;
   }
 `;

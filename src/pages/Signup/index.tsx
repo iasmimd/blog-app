@@ -1,10 +1,15 @@
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { Link } from 'react-router-dom';
+import api from '../../services/api';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import { Container } from './style';
-import api from '../../services/api';
+import {HiOutlineMail, HiOutlinePhotograph} from 'react-icons/hi'
+import {FaRegUser} from 'react-icons/fa'
+import {RiLockPasswordFill} from 'react-icons/ri'
+import toast from 'react-hot-toast';
 interface RegisterUser {
   username: string;
   email: string;
@@ -30,10 +35,10 @@ const Signup = () => {
     const user = { username, email, password, avatarUrl };
     api
       .post('user/register', user)
-      .then((res) => {
-        console.log(res);
+      .then((_) => {
+        toast.success('boa! cadastro criado')
       })
-      .catch((err) => console.log(err));
+      .catch((_) => toast.error('algo deu errado ):'));
   };
 
   return (
@@ -44,29 +49,33 @@ const Signup = () => {
             label='Nome de usuário'
             name='username'
             register={register}
-            errors={errors.username?.message}
+            icon={FaRegUser}
+            error={errors.username?.message}
           />
           <Input
             label='Email'
             name='email'
             register={register}
-            errors={errors.email?.message}
+            icon={HiOutlineMail}
+            error={errors.email?.message}
           />
           <Input
             label='Senha'
             name='password'
             register={register}
-            errors={errors.password?.message}
+            icon={RiLockPasswordFill}
+            error={errors.password?.message}
           />
           <Input
             label='Foto de perfil'
             name='avatarUrl'
             register={register}
-            errors={errors.avatarUrl?.message}
+            icon={HiOutlinePhotograph}
+            error={errors.avatarUrl?.message}
           />
           </div>
           <Button type='submit'>Cadastrar</Button>
-          <p>Já possui uma conta? Faça login.</p>
+          <p>Já possui uma conta? Faça <Link to='/login'>login</Link></p>
         </form>
     </Container>
   );

@@ -35,6 +35,7 @@ export const Container = styled.div`
   }
 
   p{
+    width: 80%;
     align-self: center;
   }
 `;

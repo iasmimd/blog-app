@@ -1,14 +1,25 @@
 import { Container } from './style';
 import Button from '../Button';
+import { useHistory } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useUser } from '../../providers/User';
 
 const Header = () => {
+  const history = useHistory();
+
+  const { userInfo, getUser, clearUserInfo } = useUser();
+
+  useEffect(() => {
+    getUser();
+  }, []);
+
   return (
     <>
       <Container>
-        <img src='https://i.pinimg.com/564x/3f/87/7d/3f877d7f890d8e53839e739cff8d1a3b.jpg' alt='profile photo' />
-        <Button>Sair</Button>
+        <img src={userInfo.avatarUrl} alt='profile photo' />
+        {/* <span>{userInfo.username}</span> */}
+        <Button onClick={clearUserInfo}>Sair</Button>
       </Container>
-     
     </>
   );
 };
