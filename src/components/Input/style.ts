@@ -4,28 +4,50 @@ interface ContainerProps {
   error?: boolean;
 }
 
-export const Container = styled.div<ContainerProps>`
-  display: flex;
-  flex-direction: column;
+export const Container = styled.div`
   margin: 0 auto;
   width: 80%;
-  max-width: 320px;
+  text-align: left;
+  div {
+    span {
+      color: var(--red);
+    }
 
-  label {
-    font-size: 14px;
-    padding-left: 5px;
+    margin-bottom: 5px;
   }
+`;
+export const InputContainer = styled.div<ContainerProps>`
+  background: var(--white);
+  border-radius: 10px;
+  border: 1px solid var(--light-blue);
+  color: var(--gray);
+  height: 40px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  transition: 0.4s;
+
+  ${(props) =>
+    props.error &&
+    css`
+      border-color: var(--red);
+      svg {
+        color: var(--red);
+      }
+    `}
 
   input {
-    width: 100%;
-    height: 35px;
-    padding-left: 15px;
-    border-radius: 15px;
-    border: 1px solid var(--light-blue);
-    ${(props) =>
-      props.error &&
-      css`
-        border: 1px solid red;
-      `}
+    background: transparent;
+    width: 85%;
+    margin-left: 30px;
+    border: 0;
+    color: var(--black);
+    &::placeholder {
+      color: var(--black);
+    }
+  }
+
+  svg {
+    position: absolute;
   }
 `;

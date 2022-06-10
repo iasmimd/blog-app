@@ -17,6 +17,7 @@ export default createGlobalStyle`
         --light-blue: #B0C4DE;
         --yellow: #FFDB58;
         --dark-yellow: #DBAC00;
+        --red: #c35030;
     }
 
     body{
@@ -46,8 +47,18 @@ export default createGlobalStyle`
         font-weight: 700;
     }
 
-    button{
+    button, svg{
         cursor: pointer;
         border-style: none;
+    }
+
+    svg{
+        width: 18px;
+        height: 18px;
+    }
+    
+    a{
+        text-decoration: none;
+        color: var(--dark-blue)
     }
 `;

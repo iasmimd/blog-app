@@ -16,8 +16,8 @@ export const Container = styled.div`
     background-color: var(--vanilla);
     border-radius: 4px;
     width: 90%;
-    max-width: 420px;
-    height: 60%;
+    max-width: 400px;
+    height: 35%;
 
   }
 
@@ -25,7 +25,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 50%;
+    height: 125px;
   }
 
   button {
