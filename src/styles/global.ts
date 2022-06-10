@@ -61,4 +61,25 @@ export default createGlobalStyle`
         text-decoration: none;
         color: var(--dark-blue)
     }
+
+    .customModal{
+        width: 70%;
+        max-width: 250px;
+        height: 30%;
+        max-height: 150px;
+        border-radius: 5px;
+        background-color: var(--light-blue);
+
+        p{
+            margin-top: 30px;
+            text-align: center;
+        }
+       
+        div > button{
+            margin-top: 10px;
+            margin-left: 10px;
+            width: 80px;
+            height: 30px;
+        }      
+     }
 `;

@@ -58,7 +58,6 @@ const UserProvider = ({ children }: UserProviderProps) => {
     });
 
     setUserInfo(data);
-    toast.success(`oie, ${data.username}`);
   };
 
   const login = async (userLogin: UserLogin) => {
