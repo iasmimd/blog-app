@@ -35,7 +35,7 @@ export default createGlobalStyle`
         font-size: 1rem;
     }
 
-    textarea:focus, input:focus, select:focus {
+     input:focus, select:focus {
     box-shadow: 0 0 0 0;
     border: 0 none;
     outline: 0;
@@ -65,21 +65,20 @@ export default createGlobalStyle`
     .customModal{
         width: 70%;
         max-width: 250px;
-        height: 30%;
+        height: 150px;
         max-height: 150px;
         border-radius: 5px;
         background-color: var(--light-blue);
 
-        p{
-            margin-top: 30px;
-            text-align: center;
+        textarea{
+            padding-top: 25px;
+            height: 50%;
+            margin: 0 auto;
         }
        
-        div > button{
+         button{
             margin-top: 10px;
-            margin-left: 10px;
-            width: 80px;
-            height: 30px;
+            height: 30px;        
         }      
-     }
+    }
 `;

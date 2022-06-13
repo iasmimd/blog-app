@@ -9,42 +9,29 @@ import styled from 'styled-components';
 
 export const TextContainer = styled.div`
   display: flex;
-  justify-content: center;
-
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0px 15px;
+  margin-bottom: 15px;
 
   textarea {
-    width: 50%;
+    width: 70%;
     height: 80px;
-    /* margin-right: 15px; */
+    padding: 10px;
   }
 
   button {
-    position: absolute;
-    font-weight: 600;
-    height: 40px;
-    padding: 12px 20px;
-    outline: none;
-    border: 1px solid black;
-    background-color: transparent;
-    border-radius: 5px;
+    background-color:  var(--light-blue);
+    border-radius: 0.9em;
+    padding: 0.8em 1.2em 0.8em 1em;
+    transition: all ease-in-out 0.2s;
+    font-size: 16px;
+  }
 
-    :after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      top: 7px;
-      left: 7px;
-      height: 100%;
-      background-color: var(--light-blue);
-      z-index: -1;
-      transition: all 0.35s;
-      border-radius: inherit;
-    }
-
-    :hover:after {
-      top: 0px;
-      left: 0px;
-    }
+  button:hover {
+    background-color: var(--dark-blue);
   }
 `;
 
@@ -61,6 +48,12 @@ export const PostList = styled.ul`
     width: 40px;
     height: 40px;
     border-radius: 50%;
+
+
+  }
+
+  h3{
+    padding-left: 10px;
   }
 
   li {

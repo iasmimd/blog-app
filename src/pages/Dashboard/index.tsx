@@ -57,10 +57,17 @@ const Dashboard = () => {
       <TextContainer>
         <textarea onChange={(event) => setTextValue(event.target.value)} />
         <div>
-          <button onClick={createPost}>+</button>
+          <button
+            onClick={() => {
+              createPost();
+            }}
+          >
+            +
+          </button>
         </div>
       </TextContainer>
       <PostList>
+        <hr />
         {posts.map(({ id, owner, post }) => (
           <>
             <li key={id}>

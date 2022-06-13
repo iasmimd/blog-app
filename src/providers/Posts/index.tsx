@@ -78,6 +78,7 @@ const PostProvider = ({ children }: PostProviderProps) => {
       )
       .then((_) => {
         getAllPosts();
+        setNewTextValue('')
         toast.success('boa, post legal!');
       })
       .catch((_) => toast.error('algo deu errado ):'));
